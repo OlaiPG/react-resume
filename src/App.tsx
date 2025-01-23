@@ -8,13 +8,13 @@ import ThemeSwitcher from './components/theme-switcher';
 import ResumeData from './data.json';
 import './App.css';
 
-/** theme switcher settings */
+/** configuración del selector de temas */
 enum ThemeSwitcherMode {
   SWITCHABLE, 
   LIGHT_ONLY, 
   DARK_ONLY 
 }
-/* adjust this constant to change theme switcher behavior */
+/* ajuste esta constante para cambiar el comportamiento del conmutador de temas */
 const THEME_SWITCHER_MODE: ThemeSwitcherMode = ThemeSwitcherMode.SWITCHABLE;
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  // set theme to OS preference by default (if one exists)
+  // establecer el tema según la preferencia del sistema operativo de forma predeterminada (si existe uno)
   if (theme === '') {
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       setTheme('dark');
